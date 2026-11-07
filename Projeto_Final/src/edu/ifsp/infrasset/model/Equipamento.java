@@ -1,16 +1,28 @@
 package edu.ifsp.infrasset.model;
 
-public class Equipamento {
+public abstract class Equipamento {
+    private String codigoPatrimonio;
+    private String descricao = "Escreva aqui";
+    private double valor ;
+    private int anoAquisicao ;
 
-    String codigoPatrimonio = new codigoPatrimonio;
+    StatusManutencao statusManutencao;
 
-    String descricao = new descricao ;
 
-    double valor = new valor;
+    get atualizarStatus(){
+        return this.atualizarStatus();
+    }
 
-    int anoAquisicao = new anoAquisicao;
+    get calcularDepreciacaoAnual(){
 
-    StatusManutencao statusManutencao{
+    }
 
-    };
+    set calcularDepreciacaoAnual(){
+        return
+    }
+
+    valorAtual(int anoReferencia){
+
+    }
+
 }
