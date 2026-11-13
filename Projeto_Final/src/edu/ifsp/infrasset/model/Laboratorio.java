@@ -1,8 +1,13 @@
 package edu.ifsp.infrasset.model;
 
 
-public class Laboratorio {
+public class Laboratorio extends Equipamento {
   private String nome;
-  private Map <String, Equipamento> equipamentos;
+
+  set adicionar (Equipamento e){
+    boolean true;
+
+    if (
+  }
     
 }
