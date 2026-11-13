@@ -1,4 +1,8 @@
 package edu.ifsp.infrasset.model;
 
-public class StatusManutencao {
+  public enum  StatusManutencao {
+    OPERACIONAL,
+    EM_MANUTENCAO,
+    INATIVO,
+    DANIFICADO
 }
