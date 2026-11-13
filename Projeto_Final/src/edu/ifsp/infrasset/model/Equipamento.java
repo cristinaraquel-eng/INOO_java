@@ -2,27 +2,53 @@ package edu.ifsp.infrasset.model;
 
 public abstract class Equipamento {
     private String codigoPatrimonio;
-    private String descricao = "Escreva aqui";
-    private double valor ;
-    private int anoAquisicao ;
+    private String descricao;
+    private double valor;
+    private int anoAquisicao;
+    private StatusManutencao statusManutencao = StatusManutencao.OPERACIONAL; 
 
-    StatusManutencao statusManutencao;
-
-
-    get atualizarStatus(){
-        return this.atualizarStatus();
+    // Construtor
+    public Equipamento(String codigoPatrimonio, String descricao, double valor, int anoAquisicao) {
+        this.codigoPatrimonio = codigoPatrimonio;
+        this.descricao = descricao;
+        this.valor = valor;
+        this.anoAquisicao = anoAquisicao;
     }
 
-    get calcularDepreciacaoAnual(){
-
+    // Método para atualizar o status recebendo o enum (sem retono por isso void)
+    public void atualizarStatus(StatusManutencao novoStatus) {
+        this.statusManutencao = novoStatus;
     }
 
-    set calcularDepreciacaoAnual(){
-        return
+    // Métodos abstratos(ou seja sem parametros apenas nomeados na classe)
+    public abstract double calcularDepreciacaoAnual();    
+    public abstract String getCategoria();
+
+    // Método concreto para calcular o valor atual
+    public double valorAtual(int anoReferencia) {
+        int anos = Math.max(0, anoReferencia - this.anoAquisicao);
+        double valorAtual = this.valor - (this.calcularDepreciacaoAnual() * anos);
+        return Math.max(0, valorAtual);
     }
 
-    valorAtual(int anoReferencia){
-
+    // Getters (usando para retornar os valores)
+    public String getCodigoPatrimonio() {
+        return codigoPatrimonio;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public int getAnoAquisicao() {
+        return anoAquisicao;
+    }
+
+    public StatusManutencao getStatusManutencao() {
+        return statusManutencao;
+    }
 }
