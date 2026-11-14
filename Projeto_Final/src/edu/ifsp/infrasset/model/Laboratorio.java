@@ -4,11 +4,6 @@ import java.util.HashMap
 
 public class Laboratorio Equipamento {
   private String nome;
-
-  set adicionar (Equipamento e){
-    boolean true;
-
-    if ()
-  }
+  Map < String, Equipamento > equipamentos;
     
 }
